@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "200542964228",
+    "firebase_url": "https://hamroride-a3538.firebaseio.com",
+    "project_id": "hamroride-a3538",
+    "storage_bucket": "hamroride-a3538.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:200542964228:android:d9181dfac4cc8cf5bf4351",
+        "android_client_info": {
+          "package_name": "com.example.hamroride"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "200542964228-4v47efo5v7r0hsi7pb5cmq27citmf20m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.hamroride",
+            "certificate_hash": "c00517baea187d339571a97db736f0f47d4d2768"
+          }
+        },
+        {
+          "client_id": "200542964228-i6qnv1trm147tt6e6kdci97isu27gc6c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvm8AogwBopVfKWsw7G5eNxOtQQgXXtAk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "200542964228-i6qnv1trm147tt6e6kdci97isu27gc6c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
