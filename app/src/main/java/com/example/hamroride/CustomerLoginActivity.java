@@ -44,7 +44,7 @@ public class CustomerLoginActivity extends AppCompatActivity {
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                 if (user != null) {
-                    Intent intent = new Intent(CustomerLoginActivity.this, MainActivity.class);
+                    Intent intent = new Intent(CustomerLoginActivity.this, CustomerMapActivity.class);
                     startActivity(intent);
                     finish();
                     return;
@@ -66,7 +66,7 @@ public class CustomerLoginActivity extends AppCompatActivity {
 
                         } else {
                             String user_id = mAuth.getCurrentUser().getUid();
-                            DatabaseReference current_user_db = FirebaseDatabase.getInstance().getReference().child("Users").child("Riders").child(user_id);
+                            DatabaseReference current_user_db = FirebaseDatabase.getInstance().getReference().child("Users").child("Customers").child(user_id);
                             current_user_db.setValue(true);
                             Toast.makeText(CustomerLoginActivity.this, "Registration successfull", Toast.LENGTH_SHORT).show();
                         }
@@ -87,6 +87,7 @@ public class CustomerLoginActivity extends AppCompatActivity {
                             Toast.makeText(CustomerLoginActivity.this, "Login Failed", Toast.LENGTH_SHORT).show();
                         } else {
                             Toast.makeText(CustomerLoginActivity.this, "Login Success", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(CustomerLoginActivity.this,CustomerMapActivity.class));
                         }
                     }
                 });

@@ -2,7 +2,7 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:map="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".DriverMapActivity"
+    tools:context=".CustomerMapActivity"
     android:layout_height="match_parent"
     android:layout_width="match_parent">
 
@@ -18,6 +18,14 @@
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:text="Pick My Location"
+        android:id="@+id/request"
         />
 
 </FrameLayout>
