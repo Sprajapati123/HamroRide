@@ -159,7 +159,7 @@ public class CustomerSettingsActivity extends AppCompatActivity {
             uploadTask.addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                    Uri downloadUrl = taskSnapshot.getDownloadUrl();
+                    Uri downloadUrl = taskSnapshot.getUploadSessionUri();
 
                     Map newImage = new HashMap();
                     newImage.put("profileImageUrl", downloadUrl.toString());
