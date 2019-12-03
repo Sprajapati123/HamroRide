@@ -52,7 +52,7 @@ public class DriverMapActivity extends FragmentActivity implements OnMapReadyCal
     Location mLastLocation;
     LocationRequest mLocationRequest;
 
-    private Button mLogout;
+    private Button mLogout,mSettings;
 
     private String customerId = "";
 
@@ -89,12 +89,14 @@ public class DriverMapActivity extends FragmentActivity implements OnMapReadyCal
 
 
         mLogout = (Button) findViewById(R.id.logout);
+        mSettings = (Button) findViewById(R.id.settings);
 
         mCustomerInfo=findViewById(R.id.customerInfo);
         mCustomerProfileImage=findViewById(R.id.customerProfileImage);
         mCustomerName=findViewById(R.id.customerName);
         mCustomerPhone=findViewById(R.id.customerPhone);
         mCustomerDestination=findViewById(R.id.customerDestination);
+
 
         mLogout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -105,6 +107,16 @@ public class DriverMapActivity extends FragmentActivity implements OnMapReadyCal
 
                 FirebaseAuth.getInstance().signOut();
                 Intent intent = new Intent(DriverMapActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+                return;
+            }
+        });
+
+        mSettings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(DriverMapActivity.this, DriverSettingsActivity.class);
                 startActivity(intent);
                 finish();
                 return;
