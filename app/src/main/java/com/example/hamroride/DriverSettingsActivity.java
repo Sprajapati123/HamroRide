@@ -14,6 +14,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -44,10 +46,13 @@ public class DriverSettingsActivity extends AppCompatActivity {
     private String mName;
     private String mPhone;
     private String mBike;
+    private String mService;
     private Uri resultUri;
 
     private String mProfileImageUrl;
     private ImageView mProfileImage;
+
+    private RadioGroup mRadioGroup;
 
 
     @Override
@@ -61,6 +66,7 @@ public class DriverSettingsActivity extends AppCompatActivity {
         mConfirm = (Button) findViewById(R.id.confirm);
         mProfileImage = (ImageView) findViewById(R.id.profileImage);
         mBikeField=(EditText) findViewById(R.id.bike);
+        mRadioGroup=findViewById(R.id.radioGroup);
 
 
         mAuth = FirebaseAuth.getInstance();
@@ -114,6 +120,17 @@ public class DriverSettingsActivity extends AppCompatActivity {
                         mBike = map.get("bike").toString();
                         mBikeField.setText(mBike);
                     }
+                    if (map.get("service") != null) {
+                        mService = map.get("service").toString();
+                      switch (mService){
+                          case "Bike":
+                              mRadioGroup.check(R.id.hamroBike);
+                              break;
+                          case "Car":
+                              mRadioGroup.check(R.id.hamroCar);
+                              break;
+                      }
+                    }
                     if (map.get("profileImageUrl") != null) {
                         mProfileImageUrl = map.get("profileImageUrl").toString();
                         Glide.with(getApplicationContext()).load(mProfileImageUrl).into(mProfileImage);
@@ -133,10 +150,23 @@ public class DriverSettingsActivity extends AppCompatActivity {
         mPhone = mPhoneField.getText().toString();
         mBike = mBikeField.getText().toString();
 
+        int selectId =mRadioGroup.getCheckedRadioButtonId();
+
+        final RadioButton radioButton=findViewById(selectId);
+
+        if (radioButton.getText()==null){
+            return;
+        }
+
+        mService = radioButton.getText().toString();
+
+
+
         Map userInfo = new HashMap();
         userInfo.put("name", mName);
         userInfo.put("phone", mPhone);
         userInfo.put("bike", mBike);
+        userInfo.put("service", mService);
 
         mDriverDatabase.updateChildren(userInfo);
 
