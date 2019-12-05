@@ -33,7 +33,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@null"
-        android:hint="Car"
+        android:hint="Bike"
         android:layout_marginBottom="20sp"/>
     <RadioGroup
         android:layout_width="match_parent"
@@ -43,18 +43,14 @@
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="UberX"
+            android:text="Bike"
             android:id="@+id/UberX"/>
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="UberBlack"
+            android:text="Car"
             android:id="@+id/UberBlack"/>
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="UberXl"
-            android:id="@+id/UberXl"/>
+
     </RadioGroup>
 
     <Button

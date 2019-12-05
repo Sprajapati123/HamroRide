@@ -53,7 +53,6 @@ public class DriverSettingsActivity extends AppCompatActivity {
     private String mCar;
     private String mService;
     private String mProfileImageUrl;
-
     private Uri resultUri;
 
     private RadioGroup mRadioGroup;
@@ -63,7 +62,6 @@ public class DriverSettingsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_driver_settings);
-
 
         mNameField = (EditText) findViewById(R.id.name);
         mPhoneField = (EditText) findViewById(R.id.phone);
@@ -127,20 +125,18 @@ public class DriverSettingsActivity extends AppCompatActivity {
                     if(map.get("service")!=null){
                         mService = map.get("service").toString();
                         switch (mService){
-                            case"UberX":
+                            case"Bike":
                                 mRadioGroup.check(R.id.UberX);
                                 break;
-                            case"UberBlack":
+                            case"Car":
                                 mRadioGroup.check(R.id.UberBlack);
-                                break;
-                            case"UberXl":
-                                mRadioGroup.check(R.id.UberXl);
                                 break;
                         }
                     }
                     if(map.get("profileImageUrl")!=null){
                         mProfileImageUrl = map.get("profileImageUrl").toString();
                         Glide.with(getApplication()).load(mProfileImageUrl).into(mProfileImage);
+
                     }
                 }
             }
@@ -150,8 +146,6 @@ public class DriverSettingsActivity extends AppCompatActivity {
             }
         });
     }
-
-
 
     private void saveUserInformation() {
         mName = mNameField.getText().toString();

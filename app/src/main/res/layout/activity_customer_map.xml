@@ -39,7 +39,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Settings" />
+                android:text="Settings"
+                android:layout_marginRight="60dp"/>
         </LinearLayout>
 
         <androidx.cardview.widget.CardView
@@ -48,11 +49,11 @@
             android:layout_below="@+id/buttons"
             android:layout_margin="20sp">
 
-            <fragment
-                android:id="@+id/autocomplete_fragment"
-                android:name="com.google.android.libraries.places.widget.AutocompleteSupportFragment"
+            <fragment android:id="@+id/autocomplete_fragment"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:name="com.google.android.libraries.places.widget.AutocompleteSupportFragment"
+                />
         </androidx.cardview.widget.CardView>
     </RelativeLayout>
 
@@ -132,19 +133,15 @@
                     android:id="@+id/UberX"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="UberX" />
+                    android:text="Bike" />
 
                 <RadioButton
                     android:id="@+id/UberBlack"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="UberBlack" />
+                    android:text="Car" />
 
-                <RadioButton
-                    android:id="@+id/UberXl"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="UberXl" />
+
             </RadioGroup>
 
             <Button
