@@ -4,7 +4,6 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.text.format.DateFormat;
 import android.view.View;
 import android.widget.Button;
@@ -293,7 +292,7 @@ public class HistorySingleActivity extends AppCompatActivity implements OnMapRea
 
         mMap.animateCamera(cameraUpdate);
 
-        mMap.addMarker(new MarkerOptions().position(pickupLatLng).title("pickup location").icon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_pickup)));
+        mMap.addMarker(new MarkerOptions().position(pickupLatLng).title("pickup location").icon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_pick)));
         mMap.addMarker(new MarkerOptions().position(destinationLatLng).title("destination"));
 
         if(polylines.size()>0) {
